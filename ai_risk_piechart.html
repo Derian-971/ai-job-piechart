@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Threat to Jobs - Pie Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      max-width: 500px;
+      max-height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="aiPieChart"></canvas>
+
+  <script>
+    const ctx = document.getElementById('aiPieChart').getContext('2d');
+    const aiPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: [
+          'Banking (54%)',
+          'Insurance (48%)',
+          'Energy (43%)',
+          'Capital Markets (40%)',
+          'Software & Platforms (36%)'
+        ],
+        datasets: [{
+          label: 'AI Job Threats by Industry',
+          data: [54, 48, 43, 40, 36],
+          backgroundColor: [
+            '#8a00d4',
+            '#b832f0',
+            '#d26ef5',
+            '#f0b0ff',
+            '#e087f4'
+          ],
+          hoverOffset: 20
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          animateScale: true
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Top Industries Threatened by AI (High Potential for Automation)'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
