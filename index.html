@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Threat to Jobs - Pie Chart</title>
-  <base href="/ai-job-piechart/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Job Risk Pie Chart</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f9f9f9;
       font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+      background-color: #f4f4f4;
     }
     canvas {
       max-width: 500px;
-      max-height: 500px;
+      margin: auto;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
+  <h1>Industries Most Threatened by AI (2024)</h1>
   <canvas id="aiPieChart"></canvas>
+  <footer>
+    Note: All listed industries exceed the average automation potential across sectors.
+  </footer>
 
   <script>
     const ctx = document.getElementById('aiPieChart').getContext('2d');
@@ -30,34 +36,35 @@
       type: 'pie',
       data: {
         labels: [
-          'Banking (54%)',
-          'Insurance (48%)',
-          'Energy (43%)',
-          'Capital Markets (40%)',
-          'Software & Platforms (36%)'
+          'Banking',
+          'Insurance',
+          'Energy',
+          'Capital Markets',
+          'Software'
         ],
         datasets: [{
-          label: 'AI Job Threats by Industry',
-          data: [54, 48, 43, 40, 36],
+          data: [61, 57, 55, 54, 50],
           backgroundColor: [
-            '#8a00d4',
-            '#b832f0',
-            '#d26ef5',
-            '#f0b0ff',
-            '#e087f4'
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
+            '#4BC0C0',
+            '#9966FF'
           ],
-          hoverOffset: 20
+          hoverOffset: 10
         }]
       },
       options: {
         responsive: true,
-        animation: {
-          animateScale: true
-        },
         plugins: {
+          legend: {
+            position: 'bottom'
+          },
           title: {
-            display: true,
-            text: 'Top Industries Threatened by AI (High Potential for Automation)'
+            display: false
+          },
+          animation: {
+            animateScale: true
           }
         }
       }
@@ -65,3 +72,4 @@
   </script>
 </body>
 </html>
+
